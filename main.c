@@ -12,7 +12,7 @@ int main(void)
     bool isValidWord = false;
 
     fgets(string, 256, stdin);
-    for (size_t i = 0; i < strlen(string) - 1; i++)
+    for (size_t i = 0; i < strlen(string); i++)
     {
         if (!isInsideWord && !isspace(string[i]))
         {
@@ -31,6 +31,11 @@ int main(void)
         {
             isValidWord = false;
         }
+    }
+    
+    if (isValidWord)
+    {
+        count++;
     }
 
     printf("%u", count);
